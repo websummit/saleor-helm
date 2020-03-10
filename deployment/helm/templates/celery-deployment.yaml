@@ -92,9 +92,6 @@ spec:
                 - 'echo "ready"'
               {{- end }}
 {{ toYaml .Values.saleor.celery.readinessProbeSettings | indent 12 }}
-          securityContext:
-            runAsNonRoot: true
-            runAsUser: 1001
           volumeMounts:
             - name: saleor-data-media
               mountPath: /app/media

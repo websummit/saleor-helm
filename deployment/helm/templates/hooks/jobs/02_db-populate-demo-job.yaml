@@ -87,9 +87,6 @@ spec:
           volumeMounts:
             - name: saleor-data-media
               mountPath: /app/media
-          securityContext:
-            runAsUser: 0
-            privileged: true
       containers:
         - name: {{ template "saleor.fullname" . }}-db-populate-demo
           image: "{{ .Values.saleor.image.repository }}:{{ .Values.saleor.image.tag }}"
@@ -98,9 +95,6 @@ spec:
             - python3
             - manage.py
             - populatedb
-          securityContext:
-            runAsNonRoot: true
-            runAsUser: 1001
 {{- include "saleor.standardEnv" . | indent 10 }}
           volumeMounts:
             - name: saleor-data-media

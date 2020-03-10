@@ -33,9 +33,6 @@ spec:
                 - update_exchange_rates
                 - --all
 {{- include "saleor.standardEnv" . | indent 14 }}
-              securityContext:
-                runAsNonRoot: true
-                runAsUser: 1001
               volumeMounts:
                 - name: custom-settings
                   mountPath: /app/saleor/custom-settings.py

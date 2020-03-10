@@ -50,9 +50,6 @@ spec:
             - manage.py
             - update_exchange_rates
             - --all
-          securityContext:
-            runAsNonRoot: true
-            runAsUser: 1001
 {{- include "saleor.standardEnv" . | indent 10 }}
           volumeMounts:
             - name: custom-settings

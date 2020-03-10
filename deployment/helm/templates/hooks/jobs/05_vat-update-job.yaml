@@ -49,9 +49,6 @@ spec:
             - python3
             - manage.py
             - get_vat_rates
-          securityContext:
-            runAsNonRoot: true
-            runAsUser: 1001
 {{- include "saleor.standardEnv" . | indent 10 }}
           volumeMounts:
             - name: custom-settings
