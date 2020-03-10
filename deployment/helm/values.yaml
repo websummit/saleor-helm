@@ -81,7 +81,7 @@ saleor:
             isStaff: true
             isSuperuser: true
       currencyUpdates:
-        enabled: true
+        enabled: false
         activeDeadlineSeconds:
         backOffLimit:
         ttlSecondsAfterFinished:
@@ -99,7 +99,7 @@ saleor:
         weight: 6
     cron:
       currencyUpdates:
-        enabled: true
+        enabled: false
         cron: "0 6 * * *"
       vatUpdates:
         enabled: true
@@ -435,7 +435,7 @@ saleor:
       # Note, the way the nginx deployment currently setup up is to be only compatible
       # with nginxinc/nginx-unprivileged docker image
       repository: "nginxinc/nginx-unprivileged"
-      tag: "1.15.5-alpine"
+      tag: "1.17-alpine"
       pullPolicy: IfNotPresent
       # pullSecret:
     containerPort: 8080
